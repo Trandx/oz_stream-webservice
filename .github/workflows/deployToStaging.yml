@@ -20,5 +20,5 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
           script_stop: true
-          script: "cd ${{secrets.STAGING_DIR}} && ./.scripts/deploy.sh" # cd to the remote directory LIKE"/var/www/html" and run the script
+          script: "cd ${{secrets.STAGING_DIR}} && sudo chmod +x ./.scripts/staging_deploy.sh && ./.scripts/staging_deploy.sh" # cd to the remote directory LIKE"/var/www/html" and run the script
 

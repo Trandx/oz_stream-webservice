@@ -17,4 +17,4 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
           script_stop: true
-          script: "cd ${{secrets.PRODUCTION_DIR}} && sudo chmod +x ./.scripts/deploy.sh && ./.scripts/deploy.sh" # cd to the remote directory LIKE"/var/www/html" and give permission and run the script
+          script: "cd ${{secrets.PRODUCTION_DIR}} && sudo chmod +x ./.scripts/production_deploy.sh && ./.scripts/production_deploy.sh" # cd to the remote directory LIKE"/var/www/html" and give permission and run the script
