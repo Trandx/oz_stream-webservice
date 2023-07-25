@@ -1,0 +1,20 @@
+name: CI -> Deploy to remote server
+on:
+  pull_request:
+    branches: [ production ]
+  push:
+    branches: [ production ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          script_stop: true
+          script: "cd ${{secrets.PRODUCTION_DIR}} && sudo chmod +x ./.scripts/deploy.sh && ./.scripts/deploy.sh" # cd to the remote directory LIKE"/var/www/html" and give permission and run the script

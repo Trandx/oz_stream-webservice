@@ -1,0 +1,24 @@
+name: CI -> Deploy a stage to remote server
+on:
+  pull_request:
+    branches: [ production ]
+  push:
+    branches: [ production ]
+
+    # Authenticate to the the server via ssh
+    # and run our deployment script
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          script_stop: true
+          script: "cd ${{secrets.STAGING_DIR}} && ./.scripts/deploy.sh" # cd to the remote directory LIKE"/var/www/html" and run the script
+
