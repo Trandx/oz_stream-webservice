@@ -1,9 +1,9 @@
 name: CI -> Deploy a stage to remote server
 on:
   pull_request:
-    branches: [ production ]
+    branches: [ staging ]
   push:
-    branches: [ production ]
+    branches: [ staging ]
 
     # Authenticate to the the server via ssh
     # and run our deployment script
