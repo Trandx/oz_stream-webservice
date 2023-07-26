@@ -17,7 +17,7 @@ return new class extends Migration
             $table->enum('name', ["annonce", "movie"])->index()->comment('annonce/movie');
             $table->timestamps();
         });
-
+        DB::statement('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";');
         DB::statement('ALTER TABLE medias_types ALTER COLUMN id SET DEFAULT uuid_generate_v4();');
     }
 
