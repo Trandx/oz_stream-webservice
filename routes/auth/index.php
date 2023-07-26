@@ -16,7 +16,7 @@ Route::post('login', [Api\Auth\LoginController::class, 'authenticate'])->name('l
 
 Route::post('register', [Api\Auth\UserController::class, 'registeruser'])->name('registerUser');
 
-Route::post('user/forgot-password', [Api\Auth\UserController::class, 'forgotPassword'])->name('change-password');
+Route::post('user/forgot-password', [Api\Auth\UserController::class, 'forgotPassword'])->name('forgot-password');
 
 Route::post('user/reset-password', [Api\Auth\UserController::class, 'passwordReset'])->name('reset-password');
 
