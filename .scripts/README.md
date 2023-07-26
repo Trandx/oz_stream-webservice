@@ -20,7 +20,7 @@ Then add:
 
     HOST
     PORT
-    SSHKEY
+    SSHKEY (copy the key that is inside /.ssh/id_rsa)
     USERNAME (this value will get when we type commande "whoami" inside the remote server)
     PRODUCTION_DIR
     STAGING_DIR
