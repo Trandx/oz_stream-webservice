@@ -16,13 +16,13 @@ git clean -df
 #git pull origin staging
 
 #allow permission to super user for composer command
-export COMPOSER_ALLOW_SUPERUSER=1;
+#export COMPOSER_ALLOW_SUPERUSER=1;
 
 # Install composer dependencies
-composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+composer install
 
 # Clear the old cache
-php artisan clear-compiled
+php artisan cache:clear
 
 # Recreate cache
 #php artisan optimize
