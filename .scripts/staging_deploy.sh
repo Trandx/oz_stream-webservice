@@ -15,6 +15,9 @@ git reset --hard FETCH_HEAD
 git clean -df
 #git pull origin staging
 
+#allow permission to super user for composer command
+export COMPOSER_ALLOW_SUPERUSER=1;
+
 # Install composer dependencies
 composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
