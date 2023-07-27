@@ -16,23 +16,23 @@ git clean -df
 
 #git pull origin production
 
-#allow permission to super user for composer command
-COMPOSER_ALLOW_SUPERUSER=1;
+#allow composer as root
+export COMPOSER_ALLOW_SUPERUSER=1;
 
 # Install composer dependencies
-composer install
+composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Clear the old cache
-php artisan cache:clear
+php artisan clear-compiled
 
 # Recreate cache
-#php artisan optimize
+php artisan optimize
 
 # Compile npm assets
 # npm run prod
 
 # Run database migrations
-php artisan migrate:fresh --seed
+php artisan migrate --force
 
 # Exit maintenance mode
 php artisan up
