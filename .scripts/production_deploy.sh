@@ -23,7 +23,7 @@ composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 php artisan clear-compiled
 
 # Recreate cache
-php artisan optimize
+#php artisan optimize
 
 # Compile npm assets
 # npm run prod
