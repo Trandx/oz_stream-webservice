@@ -17,7 +17,7 @@ git clean -df
 #git pull origin production
 
 #allow permission to super user for composer command
-#export COMPOSER_ALLOW_SUPERUSER=1;
+COMPOSER_ALLOW_SUPERUSER=1;
 
 # Install composer dependencies
 composer install
