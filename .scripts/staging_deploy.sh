@@ -15,11 +15,11 @@ git reset --hard FETCH_HEAD
 git clean -df
 #git pull origin staging
 
-#allow permission to super user for composer command
-COMPOSER_ALLOW_SUPERUSER=1;
+#allow composer as root
+export COMPOSER_ALLOW_SUPERUSER=1;
 
 # Install composer dependencies
-composer install
+composer install #--no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Clear the old cache
 php artisan cache:clear
